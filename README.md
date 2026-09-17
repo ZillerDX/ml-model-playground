@@ -17,19 +17,23 @@
 ## 🌟 Visual Showcase
 
 <div align="center">
-  <img src="./screenshots/default_light_en.png" alt="ML Model Playground Default Light Mode" width="850" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" />
-  <p><em>Default Clean Light Mode (EN) — Interactive Regression & Loss Surface</em></p>
+  <a href="https://zillerdx.github.io/ml-model-playground/">
+    <img src="./screenshots/hero_regression_light.png" alt="ML Model Playground Default Light Mode" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
+  </a>
+  <p><em>☀️ Default High-Contrast Light Mode — Polynomial Regression ($y = 0.742x - 0.217$) & Real-Time Loss History Descent</em></p>
 </div>
 
-<div align="center" style="display: flex; gap: 12px; justify-content: center; margin-top: 16px;">
-  <img src="./screenshots/thai_dark_mode.png" alt="Dark Mode with Thai Localization" width="48%" style="border-radius: 8px;" />
-  <img src="./screenshots/loss_contour_trajectory.png" alt="2D Weight Space Loss Contour" width="48%" style="border-radius: 8px;" />
-</div>
+### 🔬 Interactive Studio Highlights
 
-<div align="center" style="display: flex; gap: 12px; justify-content: center; margin-top: 12px;">
-  <img src="./screenshots/csv_import_modal.png" alt="CSV Data Ingestion Modal" width="48%" style="border-radius: 8px;" />
-  <img src="./screenshots/classification_trained.png" alt="Neural Net Decision Boundary" width="48%" style="border-radius: 8px;" />
-</div>
+| 📈 Regression & Loss Surface $(w \text{ vs } b)$ | 🎯 Neural Network & Decision Boundary |
+| :---: | :---: |
+| <img src="./screenshots/loss_contour_dark.png" alt="2D Weight Space Loss Contour" width="100%" /> | <img src="./screenshots/classification_trained.png" alt="Neural Net Decision Boundary" width="100%" /> |
+| **Loss Landscape**: 2D quadratic bowl $L(w,b)$ with live gradient descent ball trajectory rolling into the analytical OLS global minimum | **Decision Boundary**: Multi-Layer Perceptron (MLP) with Tanh activations wrapping concentric non-linear rings (100% accuracy) |
+
+| 🧭 K-Means Clustering & Lloyd's Cycle | 📥 Custom CSV & Statistical Outlier Tools |
+| :---: | :---: |
+| <img src="./screenshots/clustering_kmeans.png" alt="K-Means Clustering" width="100%" /> | <img src="./screenshots/csv_import_modal.png" alt="CSV Data Ingestion Modal" width="100%" /> |
+| **Lloyd's Cycle**: Step-by-step Voronoi partition assignment $\leftrightarrow$ centroid mean shifts with dynamic inertia (WCSS) drop | **Data Tools**: Real-time statistical IQR/Z-score outlier detection, 1-click filtering, and coordinate auto-normalization |
 
 ---
 
