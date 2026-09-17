@@ -1,5 +1,11 @@
-# ML Model Playground 🧪⚡
-### Interactive In-Browser Machine Learning Laboratory | ห้องทดลอง Machine Learning แบบอินเทอร์แอคทีฟ 100% บนเบราว์เซอร์
+﻿# ML Model Playground 🧪⚡
+
+**Zero-Friction, 100% In-Browser Interactive Machine Learning Laboratory**  
+*Explore gradient descent trajectories, non-linear decision boundaries, and Lloyd's clustering dynamics in real time.*
+
+<p align="left">
+  <a href="README.md"><b>English</b></a> • <a href="README.th.md"><b>ภาษาไทย</b></a> • <a href="https://zillerdx.github.io/ml-model-playground/"><b>Live Demo</b></a>
+</p>
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?logo=github)](https://zillerdx.github.io/ml-model-playground/)
 [![Vite](https://img.shields.io/badge/Vite-6.4-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -10,7 +16,7 @@
 [![Tests](https://img.shields.io/badge/Tests-12%20Passed%20(Exit%200)-emerald?logo=vitest&logoColor=white)](https://vitest.dev/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[**🌐 Live Demo (ลองใช้งานจริง)**](https://zillerdx.github.io/ml-model-playground/) • [**English Overview**](#-english-overview) • [**คู่มือภาษาไทย (Thai Overview)**](#-คู่มือภาษาไทย-thai-overview) • [**Architecture**](#-system-architecture) • [**Quickstart**](#-local-quickstart)
+[**Live Demo**](https://zillerdx.github.io/ml-model-playground/) • [**Visual Showcase**](#-visual-showcase) • [**Why In-Browser?**](#-why-in-browser) • [**Key Capabilities**](#-key-capabilities) • [**System Architecture**](#-system-architecture) • [**Technology Stack**](#-technology-stack) • [**Verification**](#-engineering-verification) • [**Quickstart**](#-local-quickstart) • [**Thai Documentation**](#-thai-documentation-คู่มือภาษาไทย)
 
 ---
 
@@ -20,109 +26,76 @@
   <a href="https://zillerdx.github.io/ml-model-playground/">
     <img src="./screenshots/hero_regression_light.png" alt="ML Model Playground Default Light Mode" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
   </a>
-  <p><em>☀️ Default High-Contrast Light Mode — Polynomial Regression ($y = 0.742x - 0.217$) & Real-Time Loss History Descent</em></p>
+  <p><em>☀️ Default High-Contrast Light Mode — Polynomial Regression ($y = 0.742x - 0.217$) with real-time loss descent tracking.</em></p>
 </div>
 
-### 🔬 Interactive Studio Highlights
+### 🔬 Core Laboratories & Analytical Tools
 
-| 📈 Regression & Loss Surface $(w \text{ vs } b)$ | 🎯 Neural Network & Decision Boundary |
+| 📈 Regression & 2D Loss Surface ($w \text{ vs } b$) | 🎯 Neural Network & Decision Boundary |
 | :---: | :---: |
 | <img src="./screenshots/loss_contour_dark.png" alt="2D Weight Space Loss Contour" width="100%" /> | <img src="./screenshots/classification_trained.png" alt="Neural Net Decision Boundary" width="100%" /> |
-| **Loss Landscape**: 2D quadratic bowl $L(w,b)$ with live gradient descent ball trajectory rolling into the analytical OLS global minimum | **Decision Boundary**: Multi-Layer Perceptron (MLP) with Tanh activations wrapping concentric non-linear rings (100% accuracy) |
+| **Loss Landscape**: 2D quadratic bowl $L(w,b)$ with live gradient descent ball trajectory rolling toward the analytical Ordinary Least Squares (OLS) global minimum $(w^*, b^*)$. | **Decision Boundary**: Multi-Layer Perceptron (MLP) with Tanh activations wrapping concentric non-linear rings with 100% classification accuracy. |
 
 | 🧭 K-Means Clustering & Lloyd's Cycle | 📥 Custom CSV & Statistical Outlier Tools |
 | :---: | :---: |
 | <img src="./screenshots/clustering_kmeans.png" alt="K-Means Clustering" width="100%" /> | <img src="./screenshots/csv_import_modal.png" alt="CSV Data Ingestion Modal" width="100%" /> |
-| **Lloyd's Cycle**: Step-by-step Voronoi partition assignment $\leftrightarrow$ centroid mean shifts with dynamic inertia (WCSS) drop | **Data Tools**: Real-time statistical IQR/Z-score outlier detection, 1-click filtering, and coordinate auto-normalization |
+| **Lloyd's Cycle**: Step-by-step Voronoi partition assignment $\leftrightarrow$ centroid mean recalculation with real-time Within-Cluster Sum of Squares (WCSS) inertia monitoring. | **Data Tools**: Real-time statistical $1.5 \times \text{IQR}$ and $|z| > 2.6$ outlier detection, single-click surgical filtering, and coordinate auto-normalization. |
 
 ---
 
-## 🇬🇧 English Overview
+## 💡 Why In-Browser?
 
-### 1. Target Audience (Who)
-- **Students & ML Beginners**: Learners seeking intuitive grasp of fundamental optimization without being obstructed by dry formulas or Jupyter notebook syntax.
-- **Data Practitioners & Quantitative Traders**: Engineers wanting rapid interactive spikes on custom 2D distributions and noise profiles before implementing production pipelines.
-- **Educators & Lecturers**: University instructors seeking zero-setup, 60 FPS live demonstrations of loss landscapes, regularization, and decision boundaries.
+### 1. The Problem
+Traditional machine learning environments (Jupyter Notebooks, Google Colab, and terminal scripts) create significant cognitive and environmental friction:
+- **Environment Setup Hell**: Beginners spend hours debugging Python versions, virtual environments, Pip/Conda dependencies, and native CUDA/C++ builds before fitting their first curve.
+- **Disconnected Execution Loops**: Cell-based execution introduces severe latency; learners adjust a parameter, wait for a cell to execute, and lose immediate visual cause-and-effect intuition.
+- **Static Mathematical Abstractions**: Crucial foundational concepts—such as **gradient descent overshoot**, **learning rate divergence**, **L1 vs. L2 weight penalty geometry**, and **Voronoi cluster shifts**—remain locked as abstract formulas in textbooks.
 
-### 2. The Problem
-Conventional machine learning education tools (Jupyter Notebooks, Google Colab) suffer from high adoption friction:
-- Requires Python runtime, virtual environments, and heavy dependency installations.
-- Disconnected cell execution loops prevent real-time sensory feedback.
-- Concepts such as **Gradient Descent trajectories**, **Learning Rate divergence**, **L1 vs L2 weight shrinkage**, and **Lloyd's Voronoi updates** remain abstract mathematical symbols.
+### 2. The Solution
+**ML Model Playground** replaces disjointed notebook cycles with a local-first, zero-install interactive laboratory executing entirely inside the browser:
+- **Zero-Latency Sensory Feedback**: Instant 60 FPS rendering of loss trajectories, polynomial curves, and probability surfaces via **HTML5 Canvas** and **D3.js**.
+- **Dedicated Web Worker Isolation**: Heavy tensor mathematics and automatic differentiation run on a background Web Worker powered by **TensorFlow.js**, keeping the UI butter-smooth with zero frame drops.
+- **Total Data Privacy (Local-First)**: 100% client-side computation. User datasets, custom CSV uploads, and model parameters never leave the local browser sandbox.
 
-### 3. The Solution
-**ML Model Playground** is a 100% in-browser, local-first interactive laboratory powered by **TensorFlow.js** and dedicated Web Workers:
-- **Zero Latency**: Real-time 60 FPS interactive visual feedback.
-- **Total Privacy**: All training and data processing run completely in the browser client; zero data leaves the machine.
-- **Pedagogical AHA Moments**: Witness gradient descent roll down an analytical 2D quadratic loss surface, observe polynomial curves fight or yield to outliers, and inspect neuron activations in real time.
-
-### 4. Key Capabilities
-- **📈 Module 1: Regression with Live 2D Loss Surface**
-  - Linear and polynomial curve fitting up to degree 5.
-  - Interactive **2D Weight Space Loss Contour ($w$ vs $b$)** plotting the analytical Ordinary Least Squares (OLS) global minimum $(w^*, b^*)$ alongside live gradient descent step trajectory breadcrumbs.
-  - **L1 (Lasso) vs. L2 (Ridge)** penalty controls ($\lambda \in [0.001, 0.150]$) demonstrating sparsity vs. weight shrinkage.
-  - Explicit divergence alerts when learning rate exceeds surface curvature stability.
-- **🎯 Module 2: Neural Network Classification & Decision Boundary**
-  - Configurable hidden layer topology ($[0]$ up to $[8, 8]$) with ReLU, Tanh, and Sigmoid activations.
-  - Sub-pixel 2D decision boundary probability rasterization on HTML5 Canvas.
-  - Interactive point placing for Class A ($0$) and Class B ($1$).
-- **🧭 Module 3: Step-by-Step Lloyd's K-Means Clustering**
-  - Step-by-step cycle breakdown: **Phase 1 (Voronoi Assignment)** $\leftrightarrow$ **Phase 2 (Mean Update)**.
-  - K-Means++ probabilistic initialization vs. uniform random seeding.
-  - Dynamic inertia curve (Within-Cluster Sum of Squares - WCSS) tracking convergence.
-- **🔬 Statistical Outlier Detection & 1-Click Filtering**
-  - Real-time sample anomaly evaluation using $1.5 \times \text{IQR}$ and $|z| > 2.6$ standard deviations.
-  - Outlier injection with visual pulsating indicators and single-click automated cleaning.
-- **📥 Custom CSV & Numeric Data Ingestion**
-  - Flexible file parser supporting `.csv`, `.tsv`, and `.txt` coordinate pairs.
-  - Optional auto-normalization scaling arbitrary coordinates into interactive canvas bounds.
-- **💾 JSON Model Weight Export**
-  - Instant export of learned weights, biases, optimizer configurations, and dataset coordinates for reproduction.
-- **🌓 Ergonomic Design & Bilingual Interface**
-  - Default crisp Light Mode and deep space Dark Mode (`#0B192C`).
-  - Instant English (EN) and Thai (TH) localization with Google Fonts `Prompt` & `Sarabun`.
+### 3. Target Audience (Who)
+- **Students & ML Beginners**: Build rock-solid geometric intuition for optimization surfaces and decision boundaries before writing PyTorch or TensorFlow production code.
+- **Data Scientists & Quantitative Analysts**: Rapidly prototype 2D distributions, test model sensitivity against synthetic noise and outliers, and observe regularization shrinkage in seconds.
+- **Educators & Academic Instructors**: Conduct zero-setup live classroom demonstrations without worrying about cross-platform student environment issues.
 
 ---
 
-## 🇹🇭 คู่มือภาษาไทย (Thai Overview)
+## ⚡ Key Capabilities
 
-### 1. กลุ่มผู้ใช้งานเป้าหมาย (Target Audience)
-- **นักเรียนและนักศึกษา**: ผู้เริ่มต้นศึกษา Machine Learning ที่ต้องการเห็นภาพว่า *"ทำไม Gradient Descent ถึงลู่เข้าแบบนี้"* ผ่านการทดลองสัมผัสจริง แทนการอ่านสูตรบนกระดาษ
-- **สายเทรดและ Data Practitioners**: ผู้ที่ต้องการทดสอบสมมติฐานการฟิตเส้นกราฟ, วิเคราะห์ความอ่อนไหวต่อจุดรบกวน (Noise/Outliers), หรือสังเกตผลกระทบของ L1/L2 Regularization อย่างรวดเร็ว
-- **อาจารย์และผู้สอน**: เครื่องมือประกอบการสอนสดในชั้นเรียนที่เปิดใช้งานได้ทันทีบนเบราว์เซอร์ ไม่ต้องติดตั้ง Environment
+### 📈 Module 1: Polynomial Regression & 2D Loss Surface
+- **Polynomial Curve Fitting**: Support for linear and polynomial models from degree 1 to 5 ($y = \sum_{i=0}^d w_i x^i$).
+- **2D Weight Space Loss Contour ($w \text{ vs } b$)**: Live contour visualization comparing iterative gradient descent step trajectories against the closed-form analytical Ordinary Least Squares (OLS) minimum $(w^*, b^*)$.
+- **Regularization (L1 vs. L2)**: Interactive penalty sliders ($\lambda \in [0.001, 0.150]$) illustrating Lasso weight sparsity vs. Ridge weight shrinkage.
+- **Divergence Detection**: Automated numerical alerts when the learning rate exceeds the loss landscape's Lipschitz curvature stability threshold.
+- **Configurable Optimizers**: Support for Adam, SGD, and Momentum with customizable batch sizes and learning rates.
 
-### 2. ปัญหาที่แอพพลิเคชันนี้เข้ามาแก้ไข
-เครื่องมือ ML ทั่วไป (Jupyter Notebook, Google Colab) มีอุปสรรคสำหรับผู้เริ่มต้น:
-- ต้องติดตั้ง Python, CUDA, TensorFlow/PyTorch ซึ่งใช้เวลานานและมักพบปัญหา Dependency
-- การรันโค้ดทีละ Cell ไม่ให้ Visual Feedback แบบต่อเนื่องทันที (High Latency)
-- ความเข้าใจเรื่อง **ผิวกระทะ Loss**, **Learning Rate ระเบิด (Divergence)**, หรือ **ขั้นตอนจัดกลุ่มของ K-Means** มักเข้าใจยากเมื่อดูเพียงตัวเลขหรือกราฟนิ่ง
+### 🎯 Module 2: Neural Network Classification & Decision Boundary
+- **Configurable Topology**: Multi-Layer Perceptron (MLP) with up to 2 hidden layers ($[0]$ up to $[8, 8]$ nodes).
+- **Activation Functions**: Real-time switching between ReLU, Tanh, and Sigmoid.
+- **Sub-Pixel Decision Boundary**: Continuous probability density rendering on a 2D canvas grid with color-coded classification confidence.
+- **Interactive Datasets**: Preset distributions (Concentric Circles, Two Moons, XOR) alongside an interactive canvas for custom point placement.
+- **Dynamic Synapse Graph**: Live visualization of hidden node activations and connection weight thicknesses.
 
-### 3. นวัตกรรมและโซลูชัน
-**ML Model Playground** ออกแบบให้เป็นห้องทดลอง ML แบบ Client-Side 100%:
-- **รันบนเบราว์เซอร์ด้วย TensorFlow.js**: ไม่มีคำขอส่งข้อมูลออกไปยังเซิร์ฟเวอร์ภายนอก ข้อมูลปลอดภัย 100%
-- **สถาปัตยกรรม Web Worker แยกเธรด**: โมเดลเทรนด้วยความเร็วสูงโดยที่หน้าจอ UI ไม่กระตุก (Non-blocking 60 FPS)
-- **เห็นภาพคณิตศาสตร์แบบ Interactive**: ปรับค่า Learning Rate แล้วดูลูกบอลกลิ้งลงผิวกระทะ Loss ได้แบบเรียลไทม์
+### 🧭 Module 3: Step-by-Step Lloyd's K-Means Clustering
+- **Two-Phase Stepper**: Step through Lloyd's algorithm cycle by cycle:
+  - **Phase 1 (Voronoi Assignment)**: Points assigned to the nearest Euclidean centroid.
+  - **Phase 2 (Mean Shift)**: Centroids migrate to the center of mass of their assigned cluster.
+- **Smart Seeding**: Compare **K-Means++** (probabilistic distance-weighted initialization) against uniform random seeding.
+- **Convergence Tracking**: Dynamic Within-Cluster Sum of Squares (WCSS / Inertia) elbow plot tracking cluster stability.
 
-### 4. ฟีเจอร์เด่นระดับโปร
-1. **การถดถอย (Regression) & ผิวกระทะ Loss $(w \text{ vs } b)$**:
-   - ปรับดีกรีพหุนาม 1–5, เลือก Optimizer (Adam, SGD, Momentum)
-   - แท็บ **ผิวกระทะ Loss**: แสดงภูมิประเทศกำลังสอง (Quadratic Surface), จุดต่ำสุด OLS ทางทฤษฎี $(w^*, b^*)$ และเส้นทางที่ Gradient เดินลงมาทีละก้าว
-   - รองรับ **L1 (Lasso) และ L2 (Ridge) Regularization** พร้อมแถบเลื่อนค่าน้ำหนักบทลงโทษ ($\lambda$)
-2. **การจำแนกประเภท (Classification) & ขอบเขตการตัดสินใจ**:
-   - ปรับโครงสร้าง Hidden Layers ของ Neural Network และเลือกฟังก์ชันกระตุ้น (ReLU, Tanh, Sigmoid)
-   - วาดจุดข้อมูล Class A / Class B เองบน Canvas ได้อย่างอิสระ
-3. **การจัดกลุ่ม K-Means (Clustering)**:
-   - โหมด **"ก้าวทีละก้าว (Step)"** แสดงการทำงานของ Lloyd's Cycle: *เฟส 1 (จับคู่จุดใกล้สุด)* สลับกับ *เฟส 2 (ขยับ Centroid ไปยังค่าเฉลี่ย)*
-   - เลือกการกระจายจุดเริ่มต้นได้ทั้งแบบ K-Means++ และ Random พร้อมดูกราฟค่าความเฉื่อย Inertia (WCSS)
-4. **ระบบตรวจจับและกรองจุดผิดปกติ (Outlier Detection & Filtering)**:
-   - ตรวจจับจุดแปลกแยกด้วยสถิติ $1.5 \times \text{IQR}$ และ Z-score
-   - ปุ่มจำลองจุดผิดปกติ (Inject) และปุ่มกรองจุดผิดปกติทิ้ง (Filter) ด้วยคลิกเดียว
-5. **การนำเข้าไฟล์ CSV & ส่งออกโมเดล (Import & Export)**:
-   - อัปโหลดไฟล์ `.csv` หรือวางตัวเลขพิกัด $(X, Y)$ พร้อมระบบปรับสเกลอัตโนมัติ
-   - ส่งออกโครงสร้างและค่าน้ำหนักโมเดลเป็นไฟล์ JSON นำไปใช้งานต่อได้ทันที
-6. **ดีไซน์ระดับสากล & รองรับ 2 ภาษา (EN/TH)**:
-   - ค่าเริ่มต้นเป็น **Light Mode** สีขาวสบายตา และสลับเป็น **Dark Mode** ได้ทันที
-   - สลับภาษาอังกฤษและไทยได้ 100% พร้อมชุดฟอนต์ `Prompt` และ `Sarabun` วรรณยุกต์คมชัด ไม่ตกขอบ
+### 🔬 Data Studio: Statistical Outliers & CSV Ingestion
+- **Anomaly Detection Engine**: Real-time statistical identification of anomalous samples using $1.5 \times \text{IQR}$ (Interquartile Range) and $|z| > 2.6$ standard deviations.
+- **Surgical Outlier Management**: One-click outlier injection to test model degradation, paired with single-click surgical outlier filtering.
+- **Custom CSV/TSV Ingestion**: Flexible parser supporting arbitrary 2D coordinate files with automatic canvas normalization.
+- **JSON Model Export**: Instant extraction of trained weights, biases, optimizer configurations, and dataset coordinates for reproduction.
+
+### 🌓 Ergonomic UI & Localization
+- **High-Contrast Themes**: Default clean Light Mode and deep space Dark Mode (`#0B192C`).
+- **Bilingual Support**: Instant toggling between English (EN) and Thai (TH) backed by Google Fonts `Prompt` and `Sarabun`.
 
 ---
 
@@ -131,14 +104,14 @@ Conventional machine learning education tools (Jupyter Notebooks, Google Colab) 
 ```mermaid
 flowchart TB
     subgraph Browser_Main_Thread["Browser Main UI Thread (React 18 + Zustand)"]
-        UI_Header["Header & Controls (Tabs, Mode, Lang)"]
+        UI_Header["Header & Global Controls (Theme, Language, Tabs)"]
         UI_Canvases["Interactive Canvases (D3.js & HTML5 Canvas)"]
-        UI_Store["Reactive Stores (Regression, Classification, Clustering)"]
-        Worker_Bridge["WorkerBridge (Typed Message Dispatcher)"]
+        UI_Store["Reactive State Stores (Regression, Classification, Clustering)"]
+        Worker_Bridge["WorkerBridge (Typed Message Protocol)"]
     end
 
-    subgraph Background_Worker["Dedicated Web Worker (Isolated Thread)"]
-        Worker_Dispatcher["Worker Dispatcher (Event Listener)"]
+    subgraph Background_Worker["Dedicated Web Worker (Isolated Background Thread)"]
+        Worker_Dispatcher["Worker Dispatcher (Event Hub)"]
         subgraph TFJS_Core["TensorFlow.js Engine (WebGL / CPU)"]
             TF_Regression["Polynomial Regression Model"]
             TF_NeuralNet["Multi-Layer Perceptron (MLP)"]
@@ -151,38 +124,43 @@ flowchart TB
     UI_Header --> UI_Store
     UI_Canvases <--> UI_Store
     UI_Store <--> Worker_Bridge
-    Worker_Bridge <== "postMessage (JSON Payload)" ==> Worker_Dispatcher
+    Worker_Bridge <== "postMessage (Typed JSON Payload)" ==> Worker_Dispatcher
     Worker_Dispatcher --> TF_Regression
     Worker_Dispatcher --> TF_NeuralNet
     Worker_Dispatcher --> TF_KMeans
     Worker_Dispatcher --> Loss_Surface_Engine
     Worker_Dispatcher --> Outlier_Engine
-    TFJS_Core -. "Metrics & Weights Transfer" .-> Worker_Dispatcher
+    TFJS_Core -. "Weights & Metrics Stream" .-> Worker_Dispatcher
 ```
 
+### Architectural Highlights
+1. **Thread Separation**: Keeping tensor graph allocations and backpropagation off the main thread guarantees consistent 60 FPS user interactions even during intensive training loops.
+2. **Deterministic Mathematical Engines**: Analytical OLS solutions and loss surface contours are calculated directly via closed-form linear algebra formulas, allowing instant cross-comparison with iterative gradient descent paths.
+3. **Stateless Worker Protocol**: The worker bridge communicates via typed action envelopes, preventing memory leaks and state drift.
+
 ---
 
-## 🛠️ Technology Stack & Engineering Decisions
+## 🛠️ Technology Stack
 
-| Category | Technology | Rationale & Tradeoffs |
+| Category | Technology | Architectural Rationale & Tradeoffs |
 | :--- | :--- | :--- |
-| **Framework** | **React 18 + Vite 6** | Ultra-fast HMR (<100ms) and minimal production bundle size (<350kB gzip). |
-| **Language** | **TypeScript 5.5** | Strict type safety for complex numerical tensor shapes, worker messages, and translations. |
-| **Machine Learning** | **TensorFlow.js 4.22** | Client-side tensor mathematics and automatic differentiation without backend server reliance. |
-| **Threading** | **HTML5 Dedicated Web Worker** | Keeps the main UI rendering thread locked at 60 FPS while heavy epochs compute in the background. |
-| **Visualization** | **D3.js v7 + HTML5 Canvas** | High-precision vector scales, smooth SVG interpolation, and 2D pixel grid rasterization. |
-| **State Management** | **Zustand 4** | Zero-boilerplate atomic stores; eliminates React re-render cascades during rapid training loops. |
-| **Typography & UI** | **Tailwind CSS + Google Fonts** | Utility-first tokens, dark/light theme classes, and Thai geometric sans-serif (`Prompt` & `Sarabun`). |
-| **Automated Testing**| **Vitest 3.2** | Blazing fast ESM unit test runner verifying mathematical helpers and statistical detectors. |
+| **Frontend Framework** | **React 18 + Vite 6** | Instant Hot Module Replacement (HMR < 100ms) and optimized production bundle (< 350kB gzip). |
+| **Language** | **TypeScript 5.5** | End-to-end type safety for numerical tensor shapes, worker message payloads, and localization dictionaries. |
+| **Machine Learning** | **TensorFlow.js 4.22** | Accelerated client-side tensor mathematics and automatic differentiation without backend server dependencies. |
+| **Thread Concurrency** | **HTML5 Dedicated Web Worker** | Eliminates UI freezing by isolating iterative training epochs from the DOM rendering thread. |
+| **Visual Rendering** | **D3.js v7 + HTML5 Canvas** | Vector-sharp coordinate scales, smooth SVG axis interpolation, and high-frequency 2D pixel rasterization. |
+| **State Management** | **Zustand 4** | Lightweight atomic stores that eliminate React re-render cascades during high-frequency telemetry updates. |
+| **Styling & Design** | **Tailwind CSS 3.4** | Design tokens, responsive grid layouts, and typography optimized for multilingual legibility (`Prompt` & `Sarabun`). |
+| **Test Automation** | **Vitest 3.2** | Blazing fast ESM unit test suite validating mathematical calculations and statistical anomaly detectors. |
 
 ---
 
-## 🧪 Engineering Verification & Test Suite
+## 🧪 Engineering Verification
 
-All unit tests and production builds execute cleanly with zero errors:
+All mathematical utility functions, dataset generators, and statistical outlier engines are covered by automated unit tests:
 
 ```bash
-# Automated Test Run
+# Execute unit test suite
 $ npx vitest run
 
  ✓ src/utils/mathHelpers.test.ts (4 tests)
@@ -195,7 +173,7 @@ $ npx vitest run
 ```
 
 ```bash
-# Production Bundle Check
+# Production bundle verification
 $ npm run build
 
 vite v6.4.3 building for production...
@@ -213,10 +191,10 @@ Exit Code: 0
 ## 🚀 Local Quickstart
 
 ### Prerequisites
-- Node.js 18+ or 20+
-- npm 9+
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
 
-### Installation & Run
+### Installation & Development
 ```bash
 # 1. Clone the repository
 git clone https://github.com/ZillerDX/ml-model-playground.git
@@ -228,16 +206,43 @@ npm install
 # 3. Start local development server
 npm run dev
 
-# 4. Open in browser:
-# Local Preview: http://localhost:5173/
+# 4. Open http://localhost:5173/ in your browser
 ```
 
-### Running Tests
+### Build & Test Commands
 ```bash
+# Run unit tests
 npm test
+
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
 ```
 
 ---
 
+## 🇹🇭 Thai Documentation (คู่มือภาษาไทย)
+
+สำหรับเอกสารและคู่มือการใช้งานฉบับสมบูรณ์ภาษาไทย สามารถอ่านได้ที่ **[README.th.md](README.th.md)**
+
+<details>
+<summary><b>คลิกเพื่อดูภาพรวมภาษาไทยฉบับย่อ (Expand for Thai Summary)</b></summary>
+
+### จุดเด่นของ ML Model Playground
+1. **ไม่ต้องติดตั้งสภาพแวดล้อม (Zero-Friction)**: ทำงานบนเว็บเบราว์เซอร์ 100% ไม่ต้องติดตั้ง Python, CUDA หรือ Library ใดๆ
+2. **ประมวลผลแยกเธรดด้วย Web Worker**: หน้าจอไม่ค้าง ไม่กระตุก แม้ขณะที่โมเดลกำลังเทรนอย่างหนัก
+3. **เห็นภาพคณิตศาสตร์แบบเรียลไทม์**:
+   - **Regression**: ปรับสมการพหุนาม ดูการไต่ลงของ Gradient Descent บนผิวกระทะ Loss 2D และสังเกตการหดตัวของค่าน้ำหนักผ่าน L1/L2 Regularization
+   - **Classification**: วาดจุดข้อมูลและปรับ Hidden Layers ของ Neural Network เพื่อดูขอบเขตการตัดสินใจ (Decision Boundary) แบบ 60 FPS
+   - **Clustering**: เรียนรู้ขั้นตอนการจัดกลุ่ม K-Means ทีละก้าว (Lloyd's Cycle) พร้อมดูกราฟ WCSS Elbow
+   - **Data Studio**: ตรวจจับและกรองจุดผิดปกติ (Outlier) ด้วยสถิติ IQR/Z-Score และนำเข้าไฟล์ CSV ของตนเองได้ทันที
+
+*อ่านรายละเอียดเชิงลึกทั้งหมดได้ที่ [README.th.md](README.th.md)*
+</details>
+
+---
+
 ## 📄 License
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and licensed under the [MIT License](LICENSE).
